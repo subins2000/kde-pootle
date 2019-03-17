@@ -1,1 +1,1 @@
-web: pootle runserver 0.0.0.0:$PORT
+web: pootle runserver --insecure 0.0.0.0:$PORT
