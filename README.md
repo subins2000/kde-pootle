@@ -7,6 +7,7 @@ Trying to integrate [KDE translation](https://l10n.kde.org) to Pootle for easy t
 * Install [pootle](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/server/installation.html)
 
   This repo use `pipenv`
+* `pootle initdb --no-projects`
 * Set the `translations` folder.
   ```
   mkdir translations
@@ -45,11 +46,15 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
 
   The following project variables need to be changed :
 
+  * Code : `l10n-kf5`
+  * Full Name : `KDE 5 Trunk`
   * File types : `Gettext PO`
   * Path or URL : `{POOTLE_TRANSLATION_DIRECTORY}l10n-kf5`
   * Path mapping preset : `non-GNU style`
   * Template name : `templates`
 * [Sync Pootle](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/using_pootle_fs.html) :
   ```
+  pootle fs add l10n-kf5
+  pootle fs fetch l10n-kf5
   pootle fs sync l10n-kf5
   ```
