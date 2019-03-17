@@ -1,1 +1,1 @@
-web: pootle runserver 
+web: pootle runserver $PORT
