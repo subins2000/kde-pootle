@@ -39,7 +39,8 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
 
   ```
   export LANG_CODE='ml'
-  mkdir $REPO_ROOT/translations/l10n-kf5/$LANG_CODE && cd $REPO_ROOT/translations/l10n-kf5/$LANG_CODE
+  mkdir $REPO_ROOT/translations/l10n-kf5/$LANG_CODE
+  cd $REPO_ROOT/translations/l10n-kf5/$LANG_CODE
   svn checkout svn://anonsvn.kde.org/home/kde/trunk/l10n-kf5/$LANG_CODE/messages/$PACKAGE $PACKAGE
   ```
 * Open Pootle admin and [add project](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/server/project_setup.html)
@@ -52,6 +53,9 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
   * Path or URL : `{POOTLE_TRANSLATION_DIRECTORY}l10n-kf5`
   * Path mapping preset : `non-GNU style`
   * Template name : `templates`
+
+  The extra options are only in Pootle 2.9
+
 * [Sync Pootle](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/using_pootle_fs.html) :
   ```
   pootle fs add l10n-kf5
