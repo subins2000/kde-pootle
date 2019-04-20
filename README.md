@@ -23,6 +23,14 @@ Example :
   shyam@example.com,subin@example.com
   ```
 
+### Tools
+
+These tools can be used to help in localization.
+
+* [Mozilla Machinery](https://pontoon.mozilla.org/machinery/)
+* [Olam Dictionary](https://olam.in)
+* [Fuel Project Terminology Search](http://fuelproject.org/contribute/index.php?route=search)
+
 ### Priority
 
 Consider translating these files :
