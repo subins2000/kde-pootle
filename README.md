@@ -62,6 +62,7 @@ Choose files based on the activity.
   ln -s $(realpath translations) .venv/lib/python2.7/site-packages/pootle/translations
   ln -s $(realpath log) .venv/lib/python2.7/site-packages/pootle/log
   ```
+* Extra : [set up elasticsearch for translation memory](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/translation_memory.html)
 
 ## Running
 
