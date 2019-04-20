@@ -7,17 +7,23 @@ Trying to integrate [KDE translation](https://l10n.kde.org) to Pootle for easy t
 * Install [pootle](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/server/installation.html)
 
   This repo use `pipenv`
+  ```
+  export PIPENV_VENV_IN_PROJECT=1
+  pipenv install
+  ```
 * Link `pootle.conf` :
   ```
   pootle init
   ln -s $(realpath pootle.conf) ~/.pootle/pootle.conf
   ```
 * `pootle initdb --no-projects`
-* Set the `translations` folder.
+* Make the `translations` folder.
   ```
   mkdir translations
   mkdir translations/l10n-kf5
   mkdir translations/l10n-kf5/templates/
+  ln -s $(realpath translations) .venv/lib/python2.7/site-packages/pootle/translations
+  ln -s $(realpath log) .venv/lib/python2.7/site-packages/pootle/log
   ```
 
 ## Running
