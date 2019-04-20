@@ -7,6 +7,11 @@ Trying to integrate [KDE translation](https://l10n.kde.org) to Pootle for easy t
 * Install [pootle](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/server/installation.html)
 
   This repo use `pipenv`
+* Link `pootle.conf` :
+  ```
+  pootle init
+  ln -s $(realpath pootle.conf) ~/.pootle/pootle.conf
+  ```
 * `pootle initdb --no-projects`
 * Set the `translations` folder.
   ```
@@ -15,10 +20,17 @@ Trying to integrate [KDE translation](https://l10n.kde.org) to Pootle for easy t
   mkdir translations/l10n-kf5/templates/
   ```
 
-
 ## Running
 
 Get into the virtual environment shell and run `pootle runserver --insecure`
+
+or use the `start.sh` script to run in background :
+
+```
+nohup bash start.sh > foo.out 2> foo.err < /dev/null &
+```
+
+Use `pkill -f pootle` to kill the process.
 
 ## Adding Project To Pootle
 
