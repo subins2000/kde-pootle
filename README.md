@@ -1,6 +1,43 @@
 # Pootle Instance For KDE
 
-Trying to integrate [KDE translation](https://l10n.kde.org) to Pootle for easy translation.
+Trying to integrate [KDE translation](https://l10n.kde.org) with Pootle for easy translation.
+
+## Translation
+
+* Create an account
+* [Choose a file](http://kde.anishsheela.com/ml/l10n-kf5/)
+* Start translating. [Please check the priority list](#priority-list)
+
+**IMPORTANT** : There maybe a `Your names` (`NAME OF TRANSLATORS`) and email to `Your emails` (`EMAIL OF TRANSLATORS`) string in the file. Add your name and email to it. This value gets displayed in program's **About** menu. If there already exist a value, add yours after a comma.
+
+The `Your names` and `Your emails` strings will only exist in some files. If it exist, do add your name to it !
+
+Example :
+
+* Your names :
+  ```
+  ശ്യാം കൃഷ്ണന്‍ സി.ആര്‍.,സുബിന്‍ സിബി
+  ```
+* Your emails :
+  ```
+  shyam@example.com,subin@example.com
+  ```
+
+### Priority
+
+Consider translating these files :
+
+* Files having `dolphin` in it :
+  * [applications/dolphin._desktop_.po ](http://kde.anishsheela.com/ml/l10n-kf5/applications/dolphin._desktop_.po)
+  * [applications/dolphin.po](http://kde.anishsheela.com/ml/l10n-kf5/applications/dolphin.po)
+  * [applications/org.kde.dolphin.appdata.po](http://kde.anishsheela.com/ml/l10n-kf5/applications/org.kde.dolphin.appdata.po)
+* Files having `plasma` in it :
+  * [kde-workspace/plasma-workspace._desktop_.po](http://kde.anishsheela.com/ml/l10n-kf5/kde-workspace/plasma-workspace._desktop_.po)
+  * [kde-workspace/plasma-discover](http://kde.anishsheela.com/ml/l10n-kf5/kde-workspace/plasma-discover.po)
+* Files having `kwin` in it :
+  * [kde-workspace/kwin.po](http://kde.anishsheela.com/ml/l10n-kf5/kde-workspace/kwin.po)
+
+Choose files based on the activity.
 
 ## Setup
 
