@@ -1,2 +1,6 @@
-.env 
+.env
 .svn*
+*.out
+*.err
+env
+translations
