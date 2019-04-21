@@ -95,6 +95,8 @@ KDE's l10n repository is using Subversion. A [mirror of it under `git`](https://
 
 ### The Mirror git repo
 
+These steps should be done in the [mirror git repo](https://github.com/FOSSersVAST/kde-ml)
+
 Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/package/). Example : `applications`, `kde-workspace`
 
 * Set the package :
@@ -105,15 +107,15 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
 * Get the `template` files :
 
   ```
-  cd $REPO_ROOT/translations/l10n-kf5/templates
+  cd $REPO_ROOT/l10n-kf5/templates
   svn checkout svn://anonsvn.kde.org/home/kde/trunk/l10n-kf5/templates/messages/$PACKAGE $PACKAGE
   ```
 * Get the language files :
 
   ```
   export LANG_CODE='ml'
-  mkdir $REPO_ROOT/translations/l10n-kf5/$LANG_CODE
-  cd $REPO_ROOT/translations/l10n-kf5/$LANG_CODE
+  mkdir $REPO_ROOT/l10n-kf5/$LANG_CODE
+  cd $REPO_ROOT/l10n-kf5/$LANG_CODE
   svn checkout svn://anonsvn.kde.org/home/kde/trunk/l10n-kf5/$LANG_CODE/messages/$PACKAGE $PACKAGE
   ```
 
