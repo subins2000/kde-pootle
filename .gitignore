@@ -2,5 +2,6 @@
 .svn*
 *.out
 *.err
+*.db
 env
 translations
