@@ -4,8 +4,11 @@ Trying to integrate [KDE translation](https://l10n.kde.org) with Pootle for easy
 
 ## Translation
 
-* Create an account
-* [Choose a file](http://kde.anishsheela.com/ml/l10n-kf5/)
+The website is run with a software called Pootle for translation.
+
+* [Create an account](http://kde.anishsheela.com/) & Log In (Activation is not required, you can still log in)
+* [Read this for Pootle guide](https://wiki.documentfoundation.org/PootleGuide)
+* [Choose a file from KDE KF5 Trunk](http://kde.anishsheela.com/ml/l10n-kf5/)
 * Start translating. [Please check the priority list](#priority-list)
 
 **IMPORTANT** : There maybe a `Your names` (`NAME OF TRANSLATORS`) and email to `Your emails` (`EMAIL OF TRANSLATORS`) string in the file. Add your name and email to it. This value gets displayed in program's **About** menu. If there already exist a value, add yours after a comma.
@@ -44,8 +47,10 @@ Consider translating these files :
   * [kde-workspace/plasma-discover](http://kde.anishsheela.com/ml/l10n-kf5/kde-workspace/plasma-discover.po)
 * Files having `kwin` in it :
   * [kde-workspace/kwin.po](http://kde.anishsheela.com/ml/l10n-kf5/kde-workspace/kwin.po)
+* Files having `okular` in it :
+  * [kdegraphics/okular.po](http://kde.anishsheela.com/ml/l10n-kf5/kdegraphics/okular.po)
 
-Choose files based on the activity.
+Choose files based on the activity. Completing a file is important than small work on individual files.
 
 ## Setup
 
