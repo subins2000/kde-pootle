@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 pootle = "*"
 psycopg2-binary = "*"
+django-overextends = "*"
 
 [requires]
 python_version = "2.7"
