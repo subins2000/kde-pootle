@@ -34,7 +34,7 @@ These tools can be used to help in localization.
 * [Olam Dictionary](https://olam.in)
 * [Fuel Project Terminology Search](http://fuelproject.org/contribute/index.php?route=search)
 
-### Priority
+### Priority List
 
 Consider translating these files :
 
@@ -73,6 +73,7 @@ Choose files based on the activity. Completing a file is important than small wo
   mkdir translations/l10n-kf5
   mkdir translations/l10n-kf5/templates/
   ln -s $(realpath translations) .venv/lib/python2.7/site-packages/pootle/translations
+  ln -s $(realpath custom_templates) .venv/lib/python2.7/site-packages/pootle/custom_templates
   ln -s $(realpath log) .venv/lib/python2.7/site-packages/pootle/log
   ```
 * Extra : [set up elasticsearch for translation memory](http://docs.translatehouse.org/projects/pootle/en/stable-2.8.x/features/translation_memory.html)
