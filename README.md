@@ -154,8 +154,27 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
   pootle fs sync l10n-lf5
   ```
   This will pull changes from Pootle to files
+* Update file headers :
+  ```
+  bash update-changed-pos-header.sh
+  ```
 * Commit and push :
   ```
   git commit -a -m "Updates $(date)"
   git push
+  ```
+
+## Committing to KDE upstream
+
+* Get developer access to KDE SVN
+* Checkout PO files :
+  ```bash
+  svn co svn+ssh://svn@svn.kde.org/home/kde/trunk/l10n-kf5/ml/messages
+  ```
+* Copy files from Mirror git repo to the checked out PO files
+* Add files and commit
+  ```
+  # Add all files
+  svn status | grep '?' | sed 's/^.* /svn add /' | bash
+  svn commit -m 'Update malayalam localizations'
   ```
