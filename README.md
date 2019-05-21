@@ -146,3 +146,16 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
   pootle fs fetch l10n-kf5
   pootle fs sync l10n-kf5
   ```
+
+## Committing back to Mirror git repo
+
+* In the server's `translations` folder, do :
+  ```
+  pootle fs sync l10n-lf5
+  ```
+  This will pull changes from Pootle to files
+* Commit and push :
+  ```
+  git commit -a -m "Updates $(date)"
+  git push
+  ```
