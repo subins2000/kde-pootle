@@ -147,11 +147,44 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
   pootle fs sync l10n-kf5
   ```
 
-## Committing back to Mirror git repo
+## Mirror git repo
 
-* In the server's `translations` folder, do :
+These things should be used on the [mirror git repo](https://github.com/FOSSersVAST/kde-ml).
+
+### Updating to KDE Upstream
+
+The `master` branch must be kept up-to-date with KDE upstream.
+
+For trunk **localization branch** :
+```
+export REPO_ROOT=$PWD
+export LANG_CODE='ml'
+
+for PACKAGE in $(ls $REPO_ROOT/l10n-kf5/templates); do
+  echo $PACKAGE
+  cd $REPO_ROOT/l10n-kf5/templates/$PACKAGE && svn update
+  cd $REPO_ROOT/l10n-kf5/$LANG_CODE/$PACKAGE && svn update
+done
+```
+
+### Committing Pootle changes to Mirror git repo
+
+Do these in the server's `translations` folder
+
+* Pull updates from KDE upstream :
   ```
-  pootle fs sync l10n-lf5
+  git checkout master
+  git pull
+  ```
+* Switch to `pootle` branch, merge upstream changes and sync :
+  ```
+  git checkout pootle
+  git merge --no-ff master
+  pootle fs sync l10n-kf5
+  # Maybe have to do add & fetch
+  # pootle fs add l10n-kf5
+  # pootle fs fetch l10n-kf5
+  # pootle fs sync l10n-kf5
   ```
   This will pull changes from Pootle to files
 * Update file headers :
@@ -161,10 +194,39 @@ Find the package to add from [here](https://l10n.kde.org/stats/gui/trunk-kf5/pac
 * Commit and push :
   ```
   git commit -a -m "Updates $(date)"
-  git push
+  git push origin pootle
   ```
 
-## Committing to KDE upstream
+### Merging trunk & stable
+
+Work is done on trunk branch and similar localizations from it are merged to stable. There will be two folders, `l10n-kf5` for trunk branch of KDE Framework 5 and `stable-kf5` for the stable branch (which we will clone).
+
+* [Pull all changes to trunk](#committing-pootle-changes-to-mirror-git-repo)
+* In the mirror git repo, checkout a new branch for our temporary work (this branch will be deleted at the end) :
+  ```
+  git checkout -b stable
+  mkdir stable-kf5
+  ```
+* Clone the [KDE upstream](#committing-to-kde-upstream)'s stable branch :
+  ```
+  cd stable-kf5
+  svn co svn+ssh://svn@svn.kde.org/home/kde/branches/stable/l10n-kf5/ml/messages ml
+  ```
+  The folder structure will be like :
+  ```
+  * l10n-kf5
+    * ml
+      * applications
+    * templates
+  * stable-kf5
+    * ml
+      * applications
+      * kde-workspace
+      * ...
+  ```
+* Run the `merge-to-stable.sh` script
+
+### Committing to KDE upstream
 
 * Get developer access to KDE SVN
 * Checkout PO files :
